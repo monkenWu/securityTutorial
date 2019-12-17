@@ -41,8 +41,8 @@
 <link rel="stylesheet" href="css/responsive.css">
 
 <!--====== jquery js ======-->
-<script src="js/vendor/modernizr-3.6.0.min.js"></script>
-<script src="js/vendor/jquery-1.12.4.min.js"></script>
+<script src="js/modernizr-3.6.0.min.js"></script>
+<script src="js/jquery-1.12.4.min.js"></script>
 
 <!--====== Bootstrap js ======-->
 <script src="js/bootstrap.min.js"></script>
