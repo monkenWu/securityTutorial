@@ -34,7 +34,7 @@
 </head>
 
 <body>
-    <div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true" style="position: relative;"><h1 id="資訊安全課程地圖系統開發手冊"><a class="anchor hidden-xs" href="#資訊安全課程地圖系統開發手冊" title="資訊安全課程地圖系統開發手冊"><span class="octicon octicon-link"></span></a>資訊安全課程地圖系統開發手冊</h1><p>2019/12/17</p><div class="alert alert-success">
+    <div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true"><h1 id="資訊安全課程地圖系統開發手冊" style=""><a class="anchor hidden-xs" href="#資訊安全課程地圖系統開發手冊" title="資訊安全課程地圖系統開發手冊"><span class="octicon octicon-link"></span></a>資訊安全課程地圖系統開發手冊</h1><p>2019/12/18</p><div class="alert alert-success">
 <p><img alt=":bookmark:" class="emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/bookmark.png" title=":bookmark:"> 書籤</p>
 <p><span class="toc"><ul>
 <li><a href="#資訊安全課程地圖系統開發手冊" title="資訊安全課程地圖系統開發手冊">資訊安全課程地圖系統開發手冊</a></li>
@@ -53,14 +53,15 @@
 </li>
 <li><a href="#開發規則" title="開發規則">開發規則</a><ul>
 <li><a href="#View" title="View">View</a><ul>
-<li><a href="#模板解析器" title="模板解析器">模板解析器</a></li>
+<li><a href="#課程頁面解析器" title="課程頁面解析器">課程頁面解析器</a></li>
+<li><a href="#路由與子課程" title="路由與子課程">路由與子課程</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </span></p>
-</div><h1 id="如何部署"><a class="anchor hidden-xs" href="#如何部署" title="如何部署"><span class="octicon octicon-link"></span></a>如何部署</h1><h2 id="環境部署"><a class="anchor hidden-xs" href="#環境部署" title="環境部署"><span class="octicon octicon-link"></span></a>環境部署</h2><ol>
+</div><h1 id="如何部署" style=""><a class="anchor hidden-xs" href="#如何部署" title="如何部署"><span class="octicon octicon-link"></span></a>如何部署</h1><h2 id="環境部署" style=""><a class="anchor hidden-xs" href="#環境部署" title="環境部署"><span class="octicon octicon-link"></span></a>環境部署</h2><ol>
 <li>PHP7.2~7.*
 <ul>
 <li>WIN環境<br>
@@ -78,7 +79,7 @@ in Ubuntu OS<pre><code>    sudo apt-get install php7.2-intl
         &gt; Select PHP7.2 index number
 </code></pre>
 </li>
-</ol><h2 id="程式部署"><a class="anchor hidden-xs" href="#程式部署" title="程式部署"><span class="octicon octicon-link"></span></a>程式部署</h2><p>將專案從 github fork 一份到自己的儲存庫後 clone 至本地端，再依下列步驟部屬程式。</p><ol>
+</ol><h2 id="程式部署" style=""><a class="anchor hidden-xs" href="#程式部署" title="程式部署"><span class="octicon octicon-link"></span></a>程式部署</h2><p>將專案從 github fork 一份到自己的儲存庫後 clone 至本地端，再依下列步驟部屬程式。</p><ol>
 <li>
 <p>取得框架檔案<br>
 github 上的程式不含框架本體，所以必須在 clone 至本地端後，使用 Composer 套件管理器下載回來。<br>
@@ -103,13 +104,13 @@ github 上的程式不含框架本體，所以必須在 clone 至本地端後，
 </code></pre>
 <p>執行 Ctrl+C 可以關閉開發伺服器。</p>
 </li>
-</ol><h2 id="使用框架或程式庫"><a class="anchor hidden-xs" href="#使用框架或程式庫" title="使用框架或程式庫"><span class="octicon octicon-link"></span></a>使用框架或程式庫</h2><ul>
+</ol><h2 id="使用框架或程式庫" style=""><a class="anchor hidden-xs" href="#使用框架或程式庫" title="使用框架或程式庫"><span class="octicon octicon-link"></span></a>使用框架或程式庫</h2><ul>
 <li>前端<br>
 <a href="http://bootstrap.hexschool.com/docs/4.0/getting-started/introduction/" target="_blank" rel="noopener">樣式基於 bootstrap4</a><br>
 <a href="https://drive.google.com/file/d/1VxcbczMfVlQHrEB0j_EdpyDjhvpq5qYK/view?usp=sharing" target="_blank" rel="noopener">使用套版 Edubin</a></li>
 <li>後端<br>
 <a href="https://codeigniter4.github.io/CodeIgniter4/index.html" target="_blank" rel="noopener">使用 codeigniter 4.00</a></li>
-</ul><h1 id="程式碼撰寫風格"><a class="anchor hidden-xs" href="#程式碼撰寫風格" title="程式碼撰寫風格"><span class="octicon octicon-link"></span></a>程式碼撰寫風格</h1><h2 id="排版"><a class="anchor hidden-xs" href="#排版" title="排版"><span class="octicon octicon-link"></span></a>排版</h2><h3 id="換行"><a class="anchor hidden-xs" href="#換行" title="換行"><span class="octicon octicon-link"></span></a>換行</h3><h4 id="1-php遇長索引陣列宣告換行。"><a class="anchor hidden-xs" href="#1-php遇長索引陣列宣告換行。" title="1-php遇長索引陣列宣告換行。"><span class="octicon octicon-link"></span></a>1. php遇長索引陣列宣告換行。</h4><pre><code class="php hljs"><span class="hljs-comment">//ex1包覆在function內的陣列</span>
+</ul><h1 id="程式碼撰寫風格" style=""><a class="anchor hidden-xs" href="#程式碼撰寫風格" title="程式碼撰寫風格"><span class="octicon octicon-link"></span></a>程式碼撰寫風格</h1><h2 id="排版" style=""><a class="anchor hidden-xs" href="#排版" title="排版"><span class="octicon octicon-link"></span></a>排版</h2><h3 id="換行" style=""><a class="anchor hidden-xs" href="#換行" title="換行"><span class="octicon octicon-link"></span></a>換行</h3><h4 id="1-索引陣列宣告換行。"><a class="anchor hidden-xs" href="#1-索引陣列宣告換行。" title="1-索引陣列宣告換行。"><span class="octicon octicon-link"></span></a>1. 索引陣列宣告換行。</h4><pre><code class="php hljs"><span class="hljs-comment">//ex1包覆在function內的陣列</span>
 array_push($data[<span class="hljs-string">'data'</span>],[
     <span class="hljs-string">"key"</span> =&gt; $row-&gt;key,
     <span class="hljs-string">"name"</span> =&gt; $row-&gt;name
@@ -121,9 +122,6 @@ $data = [
     <span class="hljs-string">"feedback"</span> =&gt; $result-&gt;feedback,
     <span class="hljs-string">"startDate"</span> =&gt; $startTime[<span class="hljs-number">0</span>]
 ];
-
-<span class="hljs-comment">//ex3 結構簡單，不包覆在Function中可不換行</span>
-$data = [<span class="hljs-string">"status"</span>=&gt;<span class="hljs-number">0</span>,<span class="hljs-string">"data"</span>=&gt;[]];
 
 </code></pre><h4 id="2-字串過長"><a class="anchor hidden-xs" href="#2-字串過長" title="2-字串過長"><span class="octicon octicon-link"></span></a>2. 字串過長</h4><p>依語意結構換行，並且向內縮排。</p><pre><code class="php hljs"><span class="hljs-comment">//ex1</span>
 <span class="hljs-keyword">$this</span>-&gt;light_datatables-&gt;ci-&gt;db
@@ -140,7 +138,7 @@ $buttton = <span class="hljs-string">"
     &lt;button type='button' onclick='openModal(\"watchUser\",\"[extra]\")' class='btn btn-outline-info functions-btn'&gt;查閱資料&lt;/button&gt;
     [extra]
 ';
-</span></code></pre><h1 id="開發規則"><a class="anchor hidden-xs" href="#開發規則" title="開發規則"><span class="octicon octicon-link"></span></a>開發規則</h1><h2 id="View"><a class="anchor hidden-xs" href="#View" title="View"><span class="octicon octicon-link"></span></a>View</h2><p>所有的 View 的由 Controllers 進行指向，在 app/view 資料夾中的結構與 URL 指向的名稱相同。</p><table>
+</span></code></pre><h1 id="開發規則" style=""><a class="anchor hidden-xs" href="#開發規則" title="開發規則"><span class="octicon octicon-link"></span></a>開發規則</h1><h2 id="View" style=""><a class="anchor hidden-xs" href="#View" title="View"><span class="octicon octicon-link"></span></a>View</h2><p>View 由 Controllers 進行指向，在 app/view 資料夾中的結構與 URL 指向的名稱相同。</p><table>
 <thead>
 <tr>
 <th>URL</th>
@@ -150,43 +148,45 @@ $buttton = <span class="hljs-string">"
 </thead>
 <tbody>
 <tr>
-<td>/security</td>
-<td>security</td>
+<td>/course/security</td>
+<td>/course/security</td>
 <td>資訊安全概論</td>
 </tr>
 <tr>
-<td>/design</td>
-<td>design</td>
+<td>/course/design</td>
+<td>/course/design</td>
 <td>安全軟體設計概論</td>
 </tr>
 <tr>
-<td>/programming</td>
-<td>programming</td>
+<td>/course/programming</td>
+<td>/course/programming</td>
 <td>安全程式設計概論</td>
 </tr>
 <tr>
-<td>/web</td>
-<td>web</td>
+<td>/course/web</td>
+<td>/course/web</td>
 <td>安全網頁程式設計</td>
 </tr>
 <tr>
-<td>/cloud</td>
-<td>cloud</td>
+<td>/course/cloud</td>
+<td>/course/cloud</td>
 <td>安全雲端程式設計</td>
 </tr>
 <tr>
-<td>/testing</td>
-<td>testing</td>
+<td>/course/testing</td>
+<td>/course/testing</td>
 <td>軟體安全測試</td>
 </tr>
 </tbody>
-</table><h3 id="模板解析器"><a class="anchor hidden-xs" href="#模板解析器" title="模板解析器"><span class="octicon octicon-link"></span></a>模板解析器</h3><p>每個 URL 所指向的 view 資料夾的檔案結構是固定的，我們以 web 為例：</p><pre><code>web
+</table><h3 id="課程頁面解析器" style=""><a class="anchor hidden-xs" href="#課程頁面解析器" title="課程頁面解析器"><span class="octicon octicon-link"></span></a>課程頁面解析器</h3><p>在課程（ course ）中， URL 所指向 view 資料夾的檔案結構是固定的，我們以 /course/web 為例：</p><pre><code>web
 ├─index.php
 ├─article.php
 ├─book.php
 ├─moocs.php
 └─openSource.php
-</code></pre><p>這些檔案的內容，對應畫面如下：</p><p><img src="https://i.imgur.com/pT2KSY5.png" alt=""></p><p>各 PHP 皆會初始化一個陣列，變數的列數影響到畫面呈現的筆數，在製作新頁面時，請複製 web 資料夾內的檔案進行修改，變數的結構不可改變，若結構不同，將會影響到模板解析器產生錯誤的結果。</p><p>畫面與資料的進入點為 index.php 這支檔案：</p><pre><code class="php hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="0"></span>
+</code></pre><p>這些檔案所定義的內容，足以產生一個完整的畫面：</p><p><img src="https://i.imgur.com/S9s9EnS.png" alt=""></p><blockquote>
+<p>紅線為載入，綠線為直接影響。</p>
+</blockquote><p>各 PHP 皆會初始化一個陣列，變數的列數影響到畫面呈現的筆數，在製作新頁面時，請複製 web 資料夾內的檔案進行修改，變數的結構不可改變，若結構不同，將會影響到模板解析器產生錯誤的結果。</p><h4 id="進入點"><a class="anchor hidden-xs" href="#進入點" title="進入點"><span class="octicon octicon-link"></span></a>進入點</h4><p>畫面與資料的進入點為 index.php 這支檔案：</p><pre><code class="php hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="0"></span>
 <span data-linenumber="1"></span>
 <span data-linenumber="2"></span>
 <span data-linenumber="3"></span>
@@ -232,7 +232,18 @@ $buttton = <span class="hljs-string">"
 <span data-linenumber="43"></span>
 <span data-linenumber="44"></span>
 <span data-linenumber="45"></span>
-<span data-linenumber="46"></span></div><div class="code"><span class="hljs-meta">&lt;?php</span>
+<span data-linenumber="46"></span>
+<span data-linenumber="47"></span>
+<span data-linenumber="48"></span>
+<span data-linenumber="49"></span>
+<span data-linenumber="50"></span>
+<span data-linenumber="51"></span>
+<span data-linenumber="52"></span>
+<span data-linenumber="53"></span>
+<span data-linenumber="54"></span>
+<span data-linenumber="55"></span>
+<span data-linenumber="56"></span>
+<span data-linenumber="57"></span></div><div class="code"><span class="hljs-meta">&lt;?php</span>
     <span class="hljs-comment">/***
      * 課程資源
      * */</span>
@@ -252,7 +263,6 @@ $buttton = <span class="hljs-string">"
         <span class="hljs-string">"article"</span>    =&gt; $article
     ];
 
-
     $info = [
         <span class="hljs-string">"time"</span> =&gt; <span class="hljs-string">"360 小時"</span>,
         <span class="hljs-string">"amount"</span> =&gt; count($moocs)+count($book)+count($openSource)+count($article)
@@ -271,19 +281,121 @@ $buttton = <span class="hljs-string">"
     $featuresData = [
         <span class="hljs-string">"info"</span> =&gt; $info,
         <span class="hljs-string">"extra"</span> =&gt; $extra
-    ]
+    ];
+
+    <span class="hljs-comment">/***
+     * 顯示子課程連結（可選，不宣告則不顯示）
+     * */</span>
+    $childData = [
+        [
+            <span class="hljs-string">"path"</span> =&gt; <span class="hljs-string">"java"</span>,
+            <span class="hljs-string">"name"</span> =&gt; <span class="hljs-string">"Java 安全設計課程"</span>
+        ]
+    ];
 
 <span class="hljs-meta">?&gt;</span>
 
 <span class="hljs-meta">&lt;?</span>= view(<span class="hljs-string">"basic/coursesPage/index"</span>,[
     <span class="hljs-string">"contentData"</span>  =&gt;$contentData,
-    <span class="hljs-string">"featuresData"</span> =&gt; $featuresData
+    <span class="hljs-string">"featuresData"</span> =&gt; $featuresData,
+    <span class="hljs-comment">//可選，不宣告則不顯示</span>
+    <span class="hljs-string">"childData"</span> =&gt; $childData
 ])<span class="hljs-meta">?&gt;</span>
 </div></div></code></pre><ol>
 <li>[5~11] 依序引入外部的設定檔案，它們都會宣告一個與自己檔案名稱相同的陣列變數。</li>
 <li>[13-18] 串接資料組，這些資料最後會被傳送到模板解析器。</li>
-<li>[21-39] 宣告課程屬性與額外資源等資料，因為這些資料比較少，所以沒有獨立成外部檔案。</li>
-<li>[43-46] 解析設定內容串接畫面，最後的資料將會被傳遞到 view/basic/coursesPage/index這個 PHP 內，它將會依序解析陣列所設定的內容，產生出畫面。</li>
+<li>[20-38] 宣告課程屬性與額外資源等資料，因為這些資料比較少，所以沒有獨立成外部檔案。</li>
+<li>[43-48] 若這門課程有子課程的存在，則必須宣告此組陣列，並且在下個步驟進行宣告。若不存在子課程，那麼忽略這個設定即可（即不宣告）。</li>
+<li>[52-57] 解析設定內容串接畫面，最後的資料將會被傳遞到 view/basic/coursesPage/index這個 PHP 內，它將會依序解析陣列所設定的內容，產生出畫面。</li>
+</ol><h3 id="路由與子課程" style=""><a class="anchor hidden-xs" href="#路由與子課程" title="路由與子課程"><span class="octicon octicon-link"></span></a>路由與子課程</h3><ol>
+<li>
+<p>一個 web 課程 URL 如下所示：</p>
+<blockquote>
+<p>/course/web</p>
+</blockquote>
+</li>
+<li>
+<p>若這個 URL 具有子課程，則會有如此表現：</p>
+<blockquote>
+<p>/course/web/php</p>
+</blockquote>
+</li>
+<li>
+<p>上述例子指的是，在 web 課程下會有一個 java 的子課程。<br>
+由此可知，子課程的 URL 具有無限延展的特性。</p>
+<blockquote>
+<p>/course/web/php/class1/…</p>
+</blockquote>
+</li>
+</ol><p>我們繼續以 /course/web 為例，擁有上述子課程的資料結構如下：</p><pre><code>web
+├─java
+│ ├─index.php
+│ ├─article.php
+│ ├─book.php
+│ ├─moocs.php
+│ └─openSource.php
+├─PHP
+│ ├─index.php
+│ ├─article.php
+│ ├─book.php
+│ ├─moocs.php
+│ ├─openSource.php
+│ └─class1
+│   ├─index.php
+│   ├─article.php
+│   ├─book.php
+│   ├─moocs.php
+│   └─openSource.php
+├─index.php
+├─article.php
+├─book.php
+├─moocs.php
+└─openSource.php
+</code></pre><p>Controller 會自動搜索子課程是否存在，若不存在則會跳轉畫面到最上層。而新增子課程只需要在原資料夾底下再新增新的資料夾，並且保持著上一節提到的檔案結構，就能動態新增子課程的內容。</p><h4 id="進入點1"><a class="anchor hidden-xs" href="#進入點1" title="進入點1"><span class="octicon octicon-link"></span></a>進入點</h4><p>當然，子課程的 index.php 結構上也會有一些不同，以 web/java/index.php 為例：</p><pre><code class="PHP hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="44"></span>
+<span data-linenumber="45"></span>
+<span data-linenumber="46"></span>
+<span data-linenumber="47"></span>
+<span data-linenumber="48"></span>
+<span data-linenumber="49"></span></div><div class="code"><span class="php"><span class="hljs-meta">&lt;?</span>= view(<span class="hljs-string">"basic/coursesPage/index"</span>,[
+    <span class="hljs-string">"contentData"</span>  =&gt;$contentData,
+    <span class="hljs-string">"featuresData"</span> =&gt; $featuresData,
+    <span class="hljs-comment">//子課程必須定義中文標題</span>
+    <span class="hljs-string">"childName"</span> =&gt; <span class="hljs-string">"Java 安全設計課程"</span>
+])<span class="hljs-meta">?&gt;</span></span>
+</div></div></code></pre><p>我們可以看到，在 48 行新增了子課程的中文名稱。</p><p>若是你的子課程也擁有子課程，也可以調用上一節提到的 $childData 連結讓畫面具有連貫性，我們以 web/php/index.php 為例:</p><pre><code class="PHP hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="45"></span>
+<span data-linenumber="46"></span>
+<span data-linenumber="47"></span>
+<span data-linenumber="48"></span>
+<span data-linenumber="49"></span>
+<span data-linenumber="50"></span>
+<span data-linenumber="51"></span>
+<span data-linenumber="52"></span>
+<span data-linenumber="53"></span>
+<span data-linenumber="54"></span>
+<span data-linenumber="55"></span>
+<span data-linenumber="56"></span>
+<span data-linenumber="57"></span>
+<span data-linenumber="58"></span>
+<span data-linenumber="59"></span>
+<span data-linenumber="60"></span></div><div class="code">    $childData = [
+        [
+            <span class="hljs-string">"path"</span> =&gt; <span class="hljs-string">"class1"</span>,
+            <span class="hljs-string">"name"</span> =&gt; <span class="hljs-string">"第一組課程"</span>
+        ]
+    ];
+
+<span class="hljs-meta">?&gt;</span>
+
+<span class="hljs-meta">&lt;?</span>= view(<span class="hljs-string">"basic/coursesPage/index"</span>,[
+    <span class="hljs-string">"contentData"</span>  =&gt;$contentData,
+    <span class="hljs-string">"featuresData"</span> =&gt; $featuresData,
+    <span class="hljs-comment">//子課程必須定義中文標題</span>
+    <span class="hljs-string">"childName"</span> =&gt; <span class="hljs-string">"PHP 安全設計課程"</span>,
+    <span class="hljs-string">"childData"</span> =&gt; $childData
+])<span class="hljs-meta">?&gt;</span>
+</div></div></code></pre><ol>
+<li>[45~50] 雖然 web/php/index.php 本身是子課程，卻也能再繼續向下延伸，並且調用 $childData 的解析器。</li>
+<li>[58~59] 當然，子課程的標題定義與 $childData 都必須進行宣告。</li>
 </ol></div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
@@ -296,19 +408,20 @@ $buttton = <span class="hljs-string">"
 <li class=""><a href="#如何部署" title="如何部署">如何部署</a><ul class="nav">
 <li><a href="#環境部署" title="環境部署">環境部署</a></li>
 <li class=""><a href="#程式部署" title="程式部署">程式部署</a></li>
-<li><a href="#使用框架或程式庫" title="使用框架或程式庫">使用框架或程式庫</a></li>
+<li class=""><a href="#使用框架或程式庫" title="使用框架或程式庫">使用框架或程式庫</a></li>
 </ul>
 </li>
-<li><a href="#程式碼撰寫風格" title="程式碼撰寫風格">程式碼撰寫風格</a><ul class="nav">
-<li><a href="#排版" title="排版">排版</a><ul class="nav">
-<li><a href="#換行" title="換行">換行</a></li>
+<li class=""><a href="#程式碼撰寫風格" title="程式碼撰寫風格">程式碼撰寫風格</a><ul class="nav">
+<li class=""><a href="#排版" title="排版">排版</a><ul class="nav">
+<li class=""><a href="#換行" title="換行">換行</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#開發規則" title="開發規則">開發規則</a><ul class="nav">
-<li><a href="#View" title="View">View</a><ul class="nav">
-<li><a href="#模板解析器" title="模板解析器">模板解析器</a></li>
+<li class=""><a href="#開發規則" title="開發規則">開發規則</a><ul class="nav">
+<li class=""><a href="#View" title="View">View</a><ul class="nav">
+<li class=""><a href="#課程頁面解析器" title="課程頁面解析器">課程頁面解析器</a></li>
+<li class=""><a href="#路由與子課程" title="路由與子課程">路由與子課程</a></li>
 </ul>
 </li>
 </ul>
@@ -322,21 +435,22 @@ $buttton = <span class="hljs-string">"
         <div class="toc"><ul class="nav">
 <li class=""><a href="#資訊安全課程地圖系統開發手冊" title="資訊安全課程地圖系統開發手冊">資訊安全課程地圖系統開發手冊</a></li>
 <li class=""><a href="#如何部署" title="如何部署">如何部署</a><ul class="nav">
-<li><a href="#環境部署" title="環境部署">環境部署</a></li>
+<li class=""><a href="#環境部署" title="環境部署">環境部署</a></li>
 <li class=""><a href="#程式部署" title="程式部署">程式部署</a></li>
-<li><a href="#使用框架或程式庫" title="使用框架或程式庫">使用框架或程式庫</a></li>
+<li class=""><a href="#使用框架或程式庫" title="使用框架或程式庫">使用框架或程式庫</a></li>
 </ul>
 </li>
-<li><a href="#程式碼撰寫風格" title="程式碼撰寫風格">程式碼撰寫風格</a><ul class="nav">
-<li><a href="#排版" title="排版">排版</a><ul class="nav">
-<li><a href="#換行" title="換行">換行</a></li>
+<li class=""><a href="#程式碼撰寫風格" title="程式碼撰寫風格">程式碼撰寫風格</a><ul class="nav">
+<li class=""><a href="#排版" title="排版">排版</a><ul class="nav">
+<li class=""><a href="#換行" title="換行">換行</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#開發規則" title="開發規則">開發規則</a><ul class="nav">
-<li><a href="#View" title="View">View</a><ul class="nav">
-<li><a href="#模板解析器" title="模板解析器">模板解析器</a></li>
+<li class=""><a href="#開發規則" title="開發規則">開發規則</a><ul class="nav">
+<li class=""><a href="#View" title="View">View</a><ul class="nav">
+<li class=""><a href="#課程頁面解析器" title="課程頁面解析器">課程頁面解析器</a></li>
+<li class=""><a href="#路由與子課程" title="路由與子課程">路由與子課程</a></li>
 </ul>
 </li>
 </ul>
