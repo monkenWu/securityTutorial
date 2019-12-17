@@ -12,7 +12,17 @@
                 <div class="col-lg-12">
                     <div class="courses-single-left mt-30">
                         <div class="row">
-                            <a href="<?=base_url("course/{$viewName}")?>" class="btn btn-outline-secondary btn-sm mr-10"><i class="fa fa-reply"></i></a><h4>子課程：<?=$childName?></h4>
+                            <?php
+                                $nowChildPath = $childPath ?? "";
+                                $pathArray = explode("/",$nowChildPath);
+                                $newChildPath = "";
+                                foreach ($pathArray as $key => $value) {
+                                    if(($key+1) != count($pathArray)){
+                                        $newChildPath .= "/{$value}";
+                                    }
+                                }
+                            ?>
+                            <a href="<?=base_url("course/{$viewName}{$newChildPath}")?>" class="btn btn-outline-secondary btn-sm mr-10"><i class="fa fa-reply"></i></a><h4>子課程：<?=$childName?></h4>
                         </div>
                     </div>
                 </div>

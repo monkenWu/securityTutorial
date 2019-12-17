@@ -48,14 +48,18 @@
     <?=view("basic/banner")?>
 
     <?php
-        if(isset($isChild)){
-            if($isChild){
-                echo view("{$viewName}{$childPath}/index");
+        if($ctrlName == "course"){
+            if(isset($isChild)){
+                if($isChild){
+                    echo view("{$ctrlName}/{$viewName}{$childPath}/index");
+                }else{
+                    echo view("{$ctrlName}/{$viewName}/index");
+                }
             }else{
-                echo view("{$viewName}/index");
+                echo view("{$ctrlName}/index");
             }
         }else{
-            echo view("{$viewName}/index");
+            echo view("{$ctrlName}/index");
         }
     ?>
         

@@ -1,4 +1,5 @@
 <?php
+
     /***
      * 課程資源
      * */
@@ -36,23 +37,13 @@
     $featuresData = [
         "info" => $info,
         "extra" => $extra
-    ];
-
-    /***
-     * 顯示子課程連結（可選，不宣告則不顯示）
-     * */
-    $childData = [
-        [
-            "path" => "java",
-            "name" => "Java 安全設計課程"
-        ]
-    ];
+    ]
 
 ?>
 
 <?= view("basic/coursesPage/index",[
     "contentData"  =>$contentData,
     "featuresData" => $featuresData,
-    //可選，不宣告則不顯示
-    "childData" => $childData
+    //子課程必須定義中文標題
+    "childName" => "第一組課程"
 ])?>

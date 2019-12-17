@@ -2,6 +2,8 @@
 
 class Course extends BaseController{
 
+    private $ctrlName = "course";
+
     private $course = [
         "security"    =>"資訊安全概論",
         "design"      =>"安全軟體設計概論",
@@ -27,13 +29,15 @@ class Course extends BaseController{
 
 	protected  function normal(){
         return $this->getView([
-            "pageName" => "課程選擇",
-            "viewName" => "course"
+            "ctrlName" => $this->ctrlName,
+            "viewName" => $this->ctrlName,
+            "pageName" => "課程選擇"
         ]);
     }
 
     protected  function getCourse($viewName,$pageName){
         return $this->getView([
+            "ctrlName" => $this->ctrlName,
             "pageName" => $pageName,
             "viewName" => $viewName,
             "isChild" => false
@@ -48,7 +52,7 @@ class Course extends BaseController{
            }
         }
         try {
-            view("{$viewName}{$childPath}/index");
+            view("{$this->ctrlName}/{$viewName}{$childPath}/index");
         } catch (\Exception $th) {
             if(preg_match("/Invalid file/i",$th->getMessage())){
                 return redirect()->to(base_url("course/{$viewName}"));
@@ -56,6 +60,7 @@ class Course extends BaseController{
             }
         }
         return $this->getView([
+            "ctrlName" => $this->ctrlName,
             "pageName" => $pageName,
             "viewName" => $viewName,
             "isChild" => true,
