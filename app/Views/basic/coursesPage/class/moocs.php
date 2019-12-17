@@ -4,7 +4,7 @@
             <?php foreach ($moocs as $key => $data):?>
                 <div class="card">
                     <div class="card-header" id="heading<?=$key?>">
-                        <a href="#" data-toggle="collapse" data-target="#collapse<?=$key?>" aria-expanded="<?=$key==0?"true":"false"?>" aria-controls="collapse<?=$key?>">
+                        <a href="#" class="<?=$key==0?"":"collapsed"?>" data-toggle="collapse" data-target="#collapse<?=$key?>" aria-expanded="true" aria-controls="collapse<?=$key?>">
                             <ul>
                                 <li><i class="fa fa-file-o"></i></li>
                                 <li><span class="lecture">Lecture <?=($key+1)?></span></li>

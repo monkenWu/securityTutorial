@@ -6,7 +6,7 @@
                     <div class="single-reviews">
                         <div class="reviews-author row">
                             <div class="col-3 author-thum">
-                                <img src="images/book/<?=$data["img"]?>" alt="Reviews">
+                                <img src="<?=base_url("images/book/{$data["img"]}")?>" alt="Reviews">
                             </div>
                             <div class="col-9 author-name">
                                 <a href="<?=$data["url"]?>" target="_blank"><h6><?=$data["title"]?></h6></a>

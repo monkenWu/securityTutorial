@@ -30,7 +30,7 @@ class BaseController extends Controller
 
 	protected $nav = [
 		"課程選擇" => [
-			"path" => "",
+			"path" => "course",
 			"child" => [
 				["path"=>"security","name"=>"資訊安全概論"],
 				["path"=>"design","name"=>"安全軟體設計概論"],

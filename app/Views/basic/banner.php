@@ -1,4 +1,4 @@
-<section id="page-banner" class="pt-105 pb-130 bg_cover" data-overlay="8" style="background-image: url(images/page-banner.jpeg)">
+<section id="page-banner" class="pt-105 pb-130 bg_cover" data-overlay="8" style="background-image: url(<?=base_url("images/page-banner.jpeg")?>)">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

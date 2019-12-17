@@ -17,7 +17,7 @@
                         <ul class="sub-menu">
                             <?php foreach ($value["child"] as $data):?>
                                 
-                                <li><a class="<?=$viewName==$data["path"]?"active":""?>" href="<?=base_url($data["path"])?>"><?=$data["name"]?></a></li>
+                                <li><a class="<?=$viewName==$data["path"]?"active":""?>" href="<?=base_url("{$value["path"]}/{$data["path"]}")?>"><?=$data["name"]?></a></li>
                             <?php endforeach;?>
                         </ul>
                     <?php endif;?>

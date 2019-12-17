@@ -1,9 +1,10 @@
 <div class="courses-single-left mt-30">
+
     <div class="title">
         <h3>課程資源</h3>
     </div> <!-- title -->    
     <div class="courses-single-image pt-20">
-        <img src="images/course/<?=$viewName?>.jpg" alt="Courses">
+        <img src="<?=base_url("images/course/{$viewName}.jpg")?>" alt="Courses">
     </div> <!-- courses single image -->
     
     <div class="courses-tab mt-30">

@@ -14,7 +14,7 @@
             <?php foreach ($extra as $key => $data):?>
                 <div class="single-makelike mt-20">
                     <div class="image">
-                        <img src="images/your-make/y-1.jpg" alt="Image">
+                        <img src="<?=base_url("images/your-make/y-1.jpg")?>" alt="Image">
                     </div>
                     <div class="cont">
                         <a href="<?=$data["url"]?>" target="_blank"><h4><?=$data["title"]?></h4></a>

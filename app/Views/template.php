@@ -47,7 +47,17 @@
 
     <?=view("basic/banner")?>
 
-    <?=view("{$viewName}/index")?>
+    <?php
+        if(isset($isChild)){
+            if($isChild){
+                echo view("{$viewName}{$childPath}/index");
+            }else{
+                echo view("{$viewName}/index");
+            }
+        }else{
+            echo view("{$viewName}/index");
+        }
+    ?>
         
     <footer id="footer-part">
         <?=view("basic/footer")?>

@@ -43,11 +43,11 @@
                 <div class="single-course mt-30">
                     <div class="thum">
                         <div class="image">
-                            <img src="images/course/<?=$data["path"]?>.jpg" alt="Course">
+                            <img src="<?=base_url("images/course/{$data["path"]}.jpg")?>" alt="Course">
                         </div>
                     </div>
                     <div class="cont">
-                        <a href="<?=base_url($data["path"])?>"><h4><?=$data["name"]?></h4></a>
+                        <a href="<?=base_url("{$nav["課程選擇"]["path"]}/{$data["path"]}")?>"><h4><?=$data["name"]?></h4></a>
                     </div>
                 </div> <!-- single course -->
             </div>
