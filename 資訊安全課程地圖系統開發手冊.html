@@ -34,7 +34,7 @@
 </head>
 
 <body>
-    <div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true"><h1 id="資訊安全課程地圖系統開發手冊" style=""><a class="anchor hidden-xs" href="#資訊安全課程地圖系統開發手冊" title="資訊安全課程地圖系統開發手冊"><span class="octicon octicon-link"></span></a>資訊安全課程地圖系統開發手冊</h1><p>2019/12/18</p><div class="alert alert-success">
+    <div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true" style="position: relative;"><h1 id="資訊安全課程地圖系統開發手冊" style=""><a class="anchor hidden-xs" href="#資訊安全課程地圖系統開發手冊" title="資訊安全課程地圖系統開發手冊"><span class="octicon octicon-link"></span></a>資訊安全課程地圖系統開發手冊</h1><p>2019/12/18</p><div class="alert alert-success">
 <p><img alt=":bookmark:" class="emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/bookmark.png" title=":bookmark:"> 書籤</p>
 <p><span class="toc"><ul>
 <li><a href="#資訊安全課程地圖系統開發手冊" title="資訊安全課程地圖系統開發手冊">資訊安全課程地圖系統開發手冊</a></li>
@@ -92,6 +92,9 @@ github 上的程式不含框架本體，所以必須在 clone 至本地端後，
 複製跟目錄下的 env 並且重新命名為 .env 。<br>
 移除掉 17 行的 # 並且修改至以下內容。</p>
 <pre><code class="php hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="17"></span></div><div class="code">CI_ENVIRONMENT = development
+</div></div></code></pre>
+<p>移除掉 23 行的 # 並且修改至以下內容。</p>
+<pre><code class="php hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="23"></span></div><div class="code">app.baseURL = <span class="hljs-string">'http://localhost:8080/'</span>
 </div></div></code></pre>
 </li>
 <li>
@@ -186,7 +189,7 @@ $buttton = <span class="hljs-string">"
 └─openSource.php
 </code></pre><p>這些檔案所定義的內容，足以產生一個完整的畫面：</p><p><img src="https://i.imgur.com/S9s9EnS.png" alt=""></p><blockquote>
 <p>紅線為載入，綠線為直接影響。</p>
-</blockquote><p>各 PHP 皆會初始化一個陣列，變數的列數影響到畫面呈現的筆數，在製作新頁面時，請複製 web 資料夾內的檔案進行修改，變數的結構不可改變，若結構不同，將會影響到模板解析器產生錯誤的結果。</p><h4 id="進入點"><a class="anchor hidden-xs" href="#進入點" title="進入點"><span class="octicon octicon-link"></span></a>進入點</h4><p>畫面與資料的進入點為 index.php 這支檔案：</p><pre><code class="php hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="0"></span>
+</blockquote><p>各 PHP 皆會初始化一個陣列，變數的列數影響到畫面呈現的筆數，在製作新頁面時，請複製 web 資料夾內的檔案進行修改，變數的結構不可改變，若結構不同，將會影響到模板解析器產生錯誤的結果。</p><h4 id="進入點0"><a class="anchor hidden-xs" href="#進入點0" title="進入點0"><span class="octicon octicon-link"></span></a>進入點</h4><p>畫面與資料的進入點為 index.php 這支檔案：</p><pre><code class="php hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="0"></span>
 <span data-linenumber="1"></span>
 <span data-linenumber="2"></span>
 <span data-linenumber="3"></span>
@@ -351,7 +354,7 @@ $buttton = <span class="hljs-string">"
 ├─book.php
 ├─moocs.php
 └─openSource.php
-</code></pre><p>Controller 會自動搜索子課程是否存在，若不存在則會跳轉畫面到最上層。而新增子課程只需要在原資料夾底下再新增新的資料夾，並且保持著上一節提到的檔案結構，就能動態新增子課程的內容。</p><h4 id="進入點1"><a class="anchor hidden-xs" href="#進入點1" title="進入點1"><span class="octicon octicon-link"></span></a>進入點</h4><p>當然，子課程的 index.php 結構上也會有一些不同，以 web/java/index.php 為例：</p><pre><code class="PHP hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="44"></span>
+</code></pre><p>Controller 會自動搜索子課程是否存在，若不存在則會跳轉畫面到最上層。而新增子課程只需要在原資料夾底下再新增新的資料夾，並且保持著上一節提到的檔案結構，就能動態新增子課程的內容。</p><h4 id="進入點"><a class="anchor hidden-xs" href="#進入點" title="進入點"><span class="octicon octicon-link"></span></a>進入點</h4><p>當然，子課程的 index.php 結構上也會有一些不同，以 web/java/index.php 為例：</p><pre><code class="PHP hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="44"></span>
 <span data-linenumber="45"></span>
 <span data-linenumber="46"></span>
 <span data-linenumber="47"></span>
@@ -406,7 +409,7 @@ $buttton = <span class="hljs-string">"
                 <div class="toc"><ul class="nav">
 <li class=""><a href="#資訊安全課程地圖系統開發手冊" title="資訊安全課程地圖系統開發手冊">資訊安全課程地圖系統開發手冊</a></li>
 <li class=""><a href="#如何部署" title="如何部署">如何部署</a><ul class="nav">
-<li><a href="#環境部署" title="環境部署">環境部署</a></li>
+<li class=""><a href="#環境部署" title="環境部署">環境部署</a></li>
 <li class=""><a href="#程式部署" title="程式部署">程式部署</a></li>
 <li class=""><a href="#使用框架或程式庫" title="使用框架或程式庫">使用框架或程式庫</a></li>
 </ul>
@@ -421,7 +424,7 @@ $buttton = <span class="hljs-string">"
 <li class=""><a href="#開發規則" title="開發規則">開發規則</a><ul class="nav">
 <li class=""><a href="#View" title="View">View</a><ul class="nav">
 <li class=""><a href="#課程頁面解析器" title="課程頁面解析器">課程頁面解析器</a></li>
-<li class=""><a href="#路由與子課程" title="路由與子課程">路由與子課程</a></li>
+<li><a href="#路由與子課程" title="路由與子課程">路由與子課程</a></li>
 </ul>
 </li>
 </ul>
@@ -450,7 +453,7 @@ $buttton = <span class="hljs-string">"
 <li class=""><a href="#開發規則" title="開發規則">開發規則</a><ul class="nav">
 <li class=""><a href="#View" title="View">View</a><ul class="nav">
 <li class=""><a href="#課程頁面解析器" title="課程頁面解析器">課程頁面解析器</a></li>
-<li class=""><a href="#路由與子課程" title="路由與子課程">路由與子課程</a></li>
+<li><a href="#路由與子課程" title="路由與子課程">路由與子課程</a></li>
 </ul>
 </li>
 </ul>
